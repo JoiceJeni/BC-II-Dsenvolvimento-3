@@ -1,0 +1,10 @@
+CREATE OR REPLACE PROCEDURE relatorio_quantidade_produtos_comprados()
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    SELECT data_compra, COUNT(*) AS quantidade_de_produtos
+    FROM compras
+    GROUP BY data_compra;
+END;
+$$;
+
